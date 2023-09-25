@@ -9,8 +9,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "ghpages": "gh-pages -d storybook-static"
+    "build-storybook": "storybook build && touch ./storybook-static/.nojekyll",
+    "ghpages": "gh-pages -d storybook-static -t true"
   },
   "dependencies": {
     "react": "^18.2.0",
