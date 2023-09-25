@@ -1,0 +1,47 @@
+.frame {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-radius: 16px;
+    border-right: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+    border-left: 1px solid #E0E0E0;
+}
+
+.image {
+    padding: 16px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    background-color: #004933;
+    color: white;
+}
+
+.buttons {
+    padding: 8px;
+    display: flex;
+    gap: 16px;
+}
+
+.title {
+    font-size: 16px;
+}
+
+.subtitle {
+    font-size: 28px;
+}
+
+.description {
+    font-size: 16px;
+}
+
+.expiration {
+    font-size: 12px;
+}
+
+.terms {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #4F4F4F;
+}
+
+.terms-container {
+    padding: 16px;
+}
