@@ -8,57 +8,44 @@ import './coupon-frame.css';
 /**
  * Primary UI component for user interaction
  */
-export const CouponFrame = ({ primary, backgroundColor, size, label, title, subtitle, des, exp, tc, ...props }) => {
+export const CouponFrame = ({ backgroundColor, title, subtitle, des, exp, tc, leftButtonLabel, rightButtonLabel }) => {
     return (
         <div className='frame'>
-            <div className='image'>
+            <div className='image' style={{backgroundColor}}>
                 <div className='title'>{title}</div>
                 <div className='subtitle'>{subtitle}</div>
                 <div className='description'>{des}</div>
                 <div className='expiration'>{exp}</div>
             </div>
             <div className='terms-container'>
-                <div className='terms'>{tc}</div>
+                <div className='terms'>{tc.split("\\n").map(line => (<p>{line}</p>))}</div>
             </div>
             <div className='buttons'>
-                <Button label={'Ver Detalles'} primary={true} size={'large'} />
-                <Button label={'Aplicar cupón'} primary={false} size={'large'} />
+                <Button label={leftButtonLabel} primary={true} size={'large'} />
+                <Button label={rightButtonLabel} primary={false} size={'large'} />
             </div>
         </div>
     );
 };
 
 CouponFrame.propTypes = {
-    /**
-     * Is this the principal call to action on the page?
-     */
-    primary: PropTypes.bool,
-    /**
-     * What background color to use
-     */
     backgroundColor: PropTypes.string,
-    /**
-     * How large should the button be?
-     */
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
-    /**
-     * Button contents
-     */
-    label: PropTypes.string.isRequired,
-    /**
-     * Optional click handler
-     */
-    onClick: PropTypes.func,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    des: PropTypes.string,
+    exp: PropTypes.string,
+    tc: PropTypes.string,
+    leftButtonLabel: PropTypes.string,
+    rightButtonLabel: PropTypes.string,
 };
 
 CouponFrame.defaultProps = {
     backgroundColor: null,
-    primary: false,
-    size: 'medium',
     title: 'title',
     subtitle: 'subtitle',
     des: 'description',
     exp: 'expiration',
     tc: 'terms and conditions',
-    onClick: undefined,
+    leftButtonLabel: 'Ver Detalles',
+    rightButtonLabel: 'Aplicar Cupón'
 };
